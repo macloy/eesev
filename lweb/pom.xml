@@ -9,12 +9,11 @@
 		<groupId>com.eesev.lu</groupId>
 		<version>1.0.0.3-SNAPSHOT</version>
   </parent>
-
   <groupId>com.eesev.lu</groupId>
-  <artifactId>lapi</artifactId>
+  <artifactId>lweb</artifactId>
   <version>0.1-SNAPSHOT</version>
 
-  <name>lapi</name>
+  <name>lweb</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
