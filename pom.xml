@@ -55,7 +55,8 @@
     </properties>
 
     <scm>
-        <developerConnection>scm:git:ssh://${gituser}@tools.eesevet:13018/scm/repo/lu</developerConnection>
+			<!--			<developerConnection>scm:git:ssh://${gituser}@tools.eesevet:13018/scm/repo/lu</developerConnection> -->
+			<developerConnection>scm:git:https://github.com/macloy/eesev.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
