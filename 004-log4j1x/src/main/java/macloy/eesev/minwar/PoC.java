@@ -27,6 +27,7 @@ public class PoC {
     public String show() {
         Logger logger = LoggerFactory.getLogger(PoC.class);
         logger.info("Hello PoC");
+        logger.error("Error Hello PoC");
         
         
         return "PoC show works.";
