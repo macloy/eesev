@@ -25,7 +25,7 @@ public class PoC {
      */
     @GET
     public String show() {
-        Logger logger = LoggerFactory.getLogger(PoC.class);
+        Logger logger = LoggerFactory.getLogger(this.getClass());
         logger.info("Hello PoC");
         logger.error("Error Hello PoC");
         
