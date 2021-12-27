@@ -26,11 +26,11 @@ public class PoC {
     @GET
     public String show() {
         Logger logger = LoggerFactory.getLogger(this.getClass());
-        logger.info("Hello PoC");
-        logger.error("Error Hello PoC");
+        logger.info("Hello PoC.");
+        logger.error("Error Hello PoC.");
         
         
-        return "PoC show works.";
+        return "PoC show(): works.";
     }
 }
 

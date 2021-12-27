@@ -1,16 +1,57 @@
 <configuration>
+    <!-- Every filename in File- and RollingAppender must be different or you 
+		get a misconfiguration message. Every File- and RollingAppender is "active" 
+		if you don't comment out the whole appender definition. It will create an 
+		empty file with the defined filename. -->
+
+    <!-- ConsoleAppender -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern> -->
             <pattern>%d{HH:mm:ss.SSS} %-5level %logger{30} - %msg%n</pattern>
         </encoder>
     </appender>
-    
+
+    <!-- Normal FileAppender -->
+    <appender name="FILE1" class="ch.qos.logback.core.FileAppender">
+        <file>eesev.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Rolling Appender -->
+    <appender name="FILE2" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>eesevRole.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <!-- <fileNamePattern>/tmp/cockpit.log.%d{yyyy-MM-dd}.log</fileNamePattern> -->
+
+            <!-- every minute rollover -->
+            <fileNamePattern>eesevRole.log%d{yyyy-MM-dd_HH-mm}.log
+			</fileNamePattern>
+
+            <!-- keep X days' worth of history capped at 3GB total size -->
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
     <logger name="macloy.eesev.minwar">
-        <level value="ERROR"/>
+        <level value="DEBUG" />
     </logger>
-    
-    <root level="OFF">
-        <appender-ref ref="STDOUT" />
+    <logger name="org.opensaml">
+        <level value="OFF" />
+    </logger>
+
+    <root>
+        <level value="OFF" />
+        <appender-ref ref="FILE1" />
     </root>
+
 </configuration>
