@@ -1,5 +1,5 @@
 # eesev
 ee7 examples
 
-Under Payara:  
+Under Payara::  
 eesev.log is in folder "config".
